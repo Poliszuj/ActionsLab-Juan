@@ -1,0 +1,37 @@
+name: Build and Test Pipeline - Juan Poliszuk
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Starting build process
+        run: echo "Starting build process..."
+
+      - name: Simulate compilation
+        run: sleep 3
+
+      - name: Build completed
+        run: |
+          echo "Build completed successfully"
+          echo "Built by Juan Poliszuk"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running automated tests
+        run: echo "Running automated tests..."
+
+      - name: Simulate test execution
+        run: sleep 2
+
+      - name: Print current date and time
+        run: date
+
+      - name: Tests completed
+        run: echo "All tests passed for Juan Poliszuk"
